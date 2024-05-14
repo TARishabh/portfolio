@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body style="background-color: #e5e5e5; ">
+  <div class="global-styles w-embed">
+    <style>
+      /* START: Font size settings (customize them at https://wizardry-technique.webflow.io/)*/
+      body {
+        font-size: 1.1111111111111112vw;
+      }
+
+      /* Select Color */
+      ::selection {
+        color: white;
+        background: #1f6feb;
+      }
+
+      /* Max Font Size */
+      @media screen and (min-width:1440px) {
+        body {
+          font-size: 16px;
+        }
+      }
+
+      /* Container Max Width */
+      .container {
+        max-width: 1440px;
+      }
+
+      /* Min Font Size */
+      @media screen and (max-width:991px) {
+        body {
+          font-size: 11.011111111111111px;
+        }
+      }
+
+      /* END: Font size settings */
+
+
+      .dsg-table>:last-child {
+        border-bottom: 0px;
+      }
+
+      /* Prevents hover states and clicks on elements */
+      .non-clickable {
+        pointer-events: none;
+      }
+
+      /* Enables hover states and clicks on elements */
+      .clickable {
+        pointer-events: auto;
+      }
+
+      /* Aspect ratios for image wrappers */
+      .aspect-ratio-1-1 {
+        aspect-ratio: 1 / 1;
+      }
+
+      .aspect-ratio-2-1 {
+        aspect-ratio: 2 / 1;
+      }
+
+      .aspect-ratio-4-3 {
+        aspect-ratio: 4 / 3;
+      }
+
+      .aspect-ratio-16-9 {
+        aspect-ratio: 16 / 9;
+      }
+
+      .aspect-ratio-3-4 {
+        aspect-ratio: 3 / 4;
+      }
+
+      /* Reset for links and buttons */
+      a {
+        color: inherit;
+        text-decoration: inherit;
+        font-size: inherit;
+      }
+
+      /* Removes top margin on first element in rich text fields*/
+      .w-richtext>:first-child {
+        margin-top: 0;
+      }
+
+      /* Removes bottom margin on last element in rich text fields*/
+      .w-richtext>:last-child,
+      .w-richtext ol li:last-child,
+      .w-richtext ul li:last-child {
+        margin-bottom: 0;
+      }
+
+      /*Cuts text off after 3 lines and adds "..." */
+      .is-txt-cut-3lines {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+      }
+
+      /*Cuts text off after 2 lines and adds "..." */
+      .is-txt-cut-2lines {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+      }
+
+      select {
+        appearance: none !important;
+        -webkit-appearance: none !important;
+        -moz-appearance: none !important;
+      }
+
+      .project_link {
+        isolation: isolate;
+      }
+    </style>
+  </div>
+  <div id="w-node-_9a9dbff4-3152-b2dd-7c55-40245d26fae2-5d26fae2" data-animation="default" data-collapse="medium"
+    data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="dsg-navbar w-nav"
+    style="position: fixed;">
+    <div class="container-col-12 w-container">
+      <div class="dsg-nav_wrapper"><a href="/" aria-current="page" class="dsg-brand-link w-nav-brand w--current"
+          aria-label="home">
+          <div class="logo-bar">
+            <div class="logo-txt">Rishabh Sharma</div>
+          </div>
+          <div class="rotate-wrap">
+            <div class="rotatingtext" style="color: #333;">Full Stack Developer</div>
+            <div class="rotatingtext" style="color: #333;">Android Developer</div>
+            <div class="rotatingtext" style="color: #333;">Web3 Enthusiast</div>
+            <!-- <div class="rotatingtext" style="color: #333;">Problem Solver</div> -->
+          </div>
+          <div class="w-embed">
+            <style>
+              .rotatingtext {
+                transform: translate3d(0, 16px, 0);
+                animation: rotate 10s infinite;
+                transition-timing-function: cubic-bezier(0.2, 0.5, 0.3, 1)
+              }
+
+              .rotatingtext:nth-of-type(2) {
+                animation-delay: 2.5s;
+              }
+
+              .rotatingtext:nth-of-type(3) {
+                animation-delay: 5s;
+              }
+
+              .rotatingtext:nth-of-type(4) {
+                animation-delay: 7.5s;
+              } 
+
+              @keyframes rotate {
+
+                /* Text is positioned below the wrap */
+                0% {
+                  transform: translate3d(0, 16px, 0);
+                }
+
+                /* Move text up and make it visible */
+                2.5% {
+                  transform: translate3d(0, 0, 0);
+                }
+
+                /* Between 2.5% and 25%, nothing changes (text is visible) */
+                25% {
+                  transform: translate3d(0, 0, 0);
+                }
+
+                /* Move text up and out of the wrap */
+                27.5% {
+                  transform: translate3d(0, -16px, 0);
+                }
+
+                /* Between 27.5% and 99%, nothing changes (text is invisible) */
+                99.9999% {
+                  transform: translate3d(0, -16px, 0);
+                }
+
+                /* Move text to it's original position (loop starts over) */
+                100% {
+                  transform: translate3d(0, 16px, 0);
+                }
+              }
+            </style>
+          </div>
+        </a>
+        <div class="dsg-nav_wrapper">
+          <nav role="navigation" class="dsg-nav_menu w-nav-menu" style="position: static;">
+            <div class="menu_wrap">
+              <div class="menu">
+                <a href="#home" aria-current="page" class="menu_link w-inline-block w--current"
+                  style="pointer-events: auto;">
+                  <p class="menu_link-text">Home</p>
+                </a>
+                <link rel="prefetch" href="/">
+                <a href="#work" class="menu_link w-inline-block" style="pointer-events: auto;">
+                  <p class="menu_link-text">Work</p>
+                  <div class="menu_link-bg" style="opacity: 0;"></div>
+                </a>
+                <a href="#about" class="menu_link w-inline-block" style="pointer-events: auto;">
+                  <p class="menu_link-text">About</p>
+                  <div class="menu_link-bg" style="opacity: 0;"></div>
+                </a>
+
+                <div class="menu_shape" style="left: 0px; width: 0px; opacity: 1;">
+                  <div class="menu_shape-bg"></div>
+                </div>
+              </div>
+            </div>
+            <a href="#contact" class=" btn-prm--med w-button">
+              Contact
+            </a>
+
+          </nav>
+          <div data-w-id="9a9dbff4-3152-b2dd-7c55-40245d26faf1" class="dsg-menu-button w-nav-button"
+            style="-webkit-user-select: text;" aria-label="menu" role="button" tabindex="0"
+            aria-controls="w-nav-overlay-0" aria-haspopup="menu" aria-expanded="false" fdprocessedid="xw4ivg"
+            onclick="openNavbar()">
+            <div data-is-ix2-target="1" class="menu-animation" data-w-id="2f35357e-7743-f624-08c1-9993aeae8a47"
+              data-animation-type="lottie"
+              data-loop="0" data-direction="1" data-autoplay="0" data-renderer="svg"
+              data-default-duration="2.3333333333333335" data-duration="0" data-ix2-initial-state="0"><svg
+                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100"
+                width="100" height="100" preserveAspectRatio="xMidYMid meet"
+                style="width: 100%; height: 100%; transform: translate3d(0px, 0px, 0px); content-visibility: visible;">
+                <defs>
+                  <clipPath id="__lottie_element_2">
+                    <rect width="100" height="100" x="0" y="0"></rect>
+                  </clipPath>
+                </defs>
+                <g clip-path="url(#__lottie_element_2)">
+                  <g transform="matrix(1,0,0,1,51,30)" opacity="1" style="display: block;">
+                    <g opacity="1" transform="matrix(2,0,0,2,0,0)">
+                      <path fill="rgb(51,51,51)" fill-opacity="1"
+                        d=" M15.5,0 C15.5,0 15.5,0 15.5,0 C15.5,1.1038000583648682 14.603799819946289,2 13.5,2 C13.5,2 -13.5,2 -13.5,2 C-14.603799819946289,2 -15.5,1.1038000583648682 -15.5,0 C-15.5,0 -15.5,0 -15.5,0 C-15.5,-1.1038000583648682 -14.603799819946289,-2 -13.5,-2 C-13.5,-2 13.5,-2 13.5,-2 C14.603799819946289,-2 15.5,-1.1038000583648682 15.5,0z">
+                      </path>
+                    </g>
+                  </g>
+                  <g transform="matrix(1,0,0,1,51,50)" opacity="1" style="display: block;">
+                    <g opacity="1" transform="matrix(2,0,0,2,0,0)">
+                      <path fill="rgb(51,51,51)" fill-opacity="1"
+                        d=" M15.5,0 C15.5,0 15.5,0 15.5,0 C15.5,1.1038000583648682 14.603799819946289,2 13.5,2 C13.5,2 -13.5,2 -13.5,2 C-14.603799819946289,2 -15.5,1.1038000583648682 -15.5,0 C-15.5,0 -15.5,0 -15.5,0 C-15.5,-1.1038000583648682 -14.603799819946289,-2 -13.5,-2 C-13.5,-2 13.5,-2 13.5,-2 C14.603799819946289,-2 15.5,-1.1038000583648682 15.5,0z">
+                      </path>
+                    </g>
+                  </g>
+                  <g transform="matrix(1,0,0,1,51,70)" opacity="1" style="display: block;">
+                    <g opacity="1" transform="matrix(2,0,0,2,0,0)">
+                      <path fill="rgb(51,51,51)" fill-opacity="1"
+                        d=" M15.5,0 C15.5,0 15.5,0 15.5,0 C15.5,1.1038000583648682 14.603799819946289,2 13.5,2 C13.5,2 -13.5,2 -13.5,2 C-14.603799819946289,2 -15.5,1.1038000583648682 -15.5,0 C-15.5,0 -15.5,0 -15.5,0 C-15.5,-1.1038000583648682 -14.603799819946289,-2 -13.5,-2 C-13.5,-2 13.5,-2 13.5,-2 C14.603799819946289,-2 15.5,-1.1038000583648682 15.5,0z">
+                      </path>
+                    </g>
+                  </g>
+                </g>
+              </svg></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="w-nav-overlay" data-wf-ignore id="w-nav-overlay-0"></div>
+  </div>
+  <div tr-ajaxmodal-element="lightbox" class="lightbox_section" style="opacity: 0;">
+    <div class="lightbox_modal-wrapper"><a tr-ajaxmodal-element="lightbox-close" href="#"
+        class="lightbox_close w-inline-block" aria-label="Close Modal">
+        <div class="display-none">Close Modal</div>
+        <div class="icon case-icon w-embed"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M7.02085 5.63511L7.02085 7.02012L5.6364 7.02012L2.00004 3.38375L3.38477 1.99902L7.02085 5.63511ZM10.3642 8.97842L8.97915 8.97842L8.97915 10.3629L12.6163 14L14.001 12.6153L10.3642 8.97842Z"
+              fill="#DAE1E4"></path>
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M10.3636 7.02012L14 3.38375L12.6152 1.99902L8.97915 5.63511L8.97915 7.02012L10.3636 7.02012ZM7.02085 10.3629L7.02085 8.97842L5.63584 8.97842L1.99898 12.6153L3.38371 14L7.02085 10.3629Z"
+              fill="#DAE1E4"></path>
+          </svg></div>
+      </a>
+      <div tr-ajaxmodal-element="lightbox-modal" class="lightbox_modal"
+        style="translate: none; rotate: none; scale: none; transform: translate(0px, 5em);"></div>
+    </div>
+  </div>
+  <main
+  style="transform: translate3d(0px, 0em, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d; filter: blur(0px); opacity: 1;"
+  class="main-wrapper">
+  <section id="home" class="section-scroll">
+    <header class="hero-section">
+      <div class="is-pad-tb-152">
+        <div class="container-col-12 is-hero w-container">
+          <div class="w-layout-grid grid--6-6 is-hero">
+            <div id="w-node-_69bc3066-0b8c-fe21-d81a-ac58179908a0-1799089c" class="content02_img-wrap">
+              <div data-w-id="69bc3066-0b8c-fe21-d81a-ac58179908a2" class="about-img-home"
+                style="transform: translate3d(0px, 0em, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d; opacity: 1; filter: blur(0px);">
+              </div>
+            </div>
+            <div id="w-node-_69bc3066-0b8c-fe21-d81a-ac58179908a3-1799089c" class="content-hero_text-wrap">
+              <div class="is-margin-b-24">
+                <div class="home_headline-wrap">
+                  <h1 data-w-id="69bc3066-0b8c-fe21-d81a-ac58179908a5" class="is-h1 is-max-70p"
+                    style="transform: translate3d(0px, 0em, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d; filter: blur(0px); opacity: 1;">
+                    Crafting Digital Experiences.</h1>
+                  <p data-w-id="96ddf163-d954-844e-e478-43785c4d45ba" class="is-txt-subheadline"
+                    style="filter: blur(0px); transform: translate3d(0px, 0em, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d; opacity: 1;">
+                    Rishabh Sharma</p>
+                </div>
+              </div>
+              <div class="is-pad-b-32">
+                <p data-w-id="c156ce0a-b71f-2e77-c772-af9145cc40c5" class="is-txt-small is-max-80"
+                  style="filter: blur(0px); opacity: 1; transform: translate3d(0px, 0em, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                  Building beautiful digital worlds and seamless experiences for businesses that dream big.</p>
+              </div>
+              <div class="is-margin-b-48">
+                <div data-w-id="69bc3066-0b8c-fe21-d81a-ac58179908ab" class="button-wrap"
+                  style="opacity: 1; filter: blur(0px); transform: translate3d(0px, 0em, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                  <div data-w-id="8dc1bb22-7f65-cd45-7b4b-43f0c9d35def" class="btn-wrap">
+                    <div data-w-id="1820ebb6-18d6-0ce6-2f7c-50901ad4f2ca" class="btn-primary-blk"><a href="#about"
+                        class="btn-outer w-inline-block">
+                        <div class="glow-border"
+                          style="opacity: 0; will-change: transform; transform: translate3d(195.12%, 44.444%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                        </div>
+                        <div class="btn-inner">
+                          <div class="btn-text">About Me</div>
+                          <div class="glow-inner"
+                            style="opacity: 0; will-change: transform; transform: translate3d(175.28%, 56.6672%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                          </div>
+                        </div>
+                      </a>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+  </section>
+
+
+  <!-- Content for Home Page -->
+
+  <section id="work" class="section-scroll">
+    <div class="services-section">
+      <div class="is-pad-tb-96">
+        <div class="container-col-12 w-container">
+          <div class="is-pad-b-128">
+            <div id="w-node-_8b1ace09-6eac-cd9b-4f2d-ce6417177b83-982d6f28" class="is-margin-b-24">
+              <div class="_3columns01_headline-wrap">
+                <div class="w-layout-grid grid--6-6 is-heading">
+                  <div class="_3columns01_headline-wrap">
+                    <h2 class="is-h3" styles="text-align:left;">
+                      <!-- Explore My  -->
+                      Internship Projects
+                    </h2>
+                    <p class="is-txt-subheadline">Works</p>
+                  </div>
+                  <div class="is-pad-t-48 is-mb-pad-t-0">
+                    <p class="is-txt-small">See the digital wonders I've crafted for businesses like yours.<br></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+
+          <div class="is-pad-b-24 is-mb-4">
+            <div class="w-layout-grid grid--4-4-4">
+              <!-- chatgpt -->
+              <div id="w-node-_843f8e24-e458-0542-71d3-578b060e34a2-982d6f28"
+                data-w-id="843f8e24-e458-0542-71d3-578b060e34a2" class="card01 is-design"
+                style="background-image: url('images/doctorPortalBg.png');">
+                <div class="card-body">
+                  <h1 class="card-title" style="color: white;">UrbanHealth</h1>
+                  <p class="card-sub-title" style="font-weight: 500; color:white;">UrbanHealth is a secure Doctor Portal developed with ReactJS and Django, streamlining appointment management, patient data handling, and online payments via Razorpay for enhanced healthcare services.</p>
+                  <!-- <a href="https://curio-camp-f-inal.vercel.app/" target="_blank"><button
+                      class="card-button btn-prm--med w-button " styles="border:10px solid white">Click
+                      here</button></a> -->
+
+                </div>
+              </div>
+
+              <div id="w-node-_843f8e24-e458-0542-71d3-578b060e34a2-982d6f28"
+                data-w-id="843f8e24-e458-0542-71d3-578b060e34a2" class="card01 is-design"
+                style="background-image: url('images/rajssthanDOITC.jpg');">
+                <div class="card-body">
+                  <h1 class="card-title">DOITC</h1>
+                  <p class="card-sub-title" style="font-weight: 500;">DOITC is a robust event portal engineered with Django, enabling real-time polling, data visualization, and seamless administration for high-traffic government events. It incorporates Firebase for data synchronization and customization for efficient event management.</p>
+                  <!-- <button class="card-button btn-prm--med w-button ">Click here</button> -->
+                </div>
+              </div>
+
+              <div id="w-node-_843f8e24-e458-0542-71d3-578b060e34a2-982d6f28"
+                data-w-id="843f8e24-e458-0542-71d3-578b060e34a2" class="card01 is-design"
+                style="background-image: url('images/MorSmilesClone.png');">
+                <div class="card-body">
+                  <h1 class="card-title">MorSmiles</h1>
+                  <p class="card-sub-title" style="font-weight: 500;">
+                    MorSmiles is a patient mobile app for diagnosis reports, appointments, and healthcare info. It integrates Django backend and PostgreSQL for secure data management.</p>
+                  <!-- <button class="card-button btn-prm--med w-button">Click here</button> -->
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+
+
+          <div class="is-pad-b-24 is-mb-4">
+            <h2 class="is-h3" style="margin-top: 4rem; margin-bottom: 4rem;">My Personal Projects</h2>
+            <!-- <p class="is-txt-subheadline">Works</p> -->
+          </div>
+
+
+          <div class="is-pad-b-24 is-mb-4">
+            <div class="w-layout-grid grid--4-4-4">
+              <!-- chatgpt  -->
+              <div id="w-node-_843f8e24-e458-0542-71d3-578b060e34a2-982d6f28"
+                data-w-id="843f8e24-e458-0542-71d3-578b060e34a2" class="card01 is-design"
+                style="background-image: url('images/CurioCampPage.png');">
+                <div class="card-body">
+                  <h1 class="card-title">CurioCamp</h1>
+                  <p class="card-sub-title" id="sub-title-curiocamp" style="font-weight: 500;">CurioCamp is an interactive online learning platform that fosters personalized education through chatbots, live interactions, and real-time polling. It enables dynamic engagement and knowledge acquisition for users through multifunctional features and robust technology integration.</p>
+                  <a href="https://curio-camp-f-inal.vercel.app/" target="_blank">
+                    <button class="card-button btn-prm--med w-button">Click here</button>
+                  </a>
+                </div>
+              </div>
+
+              <div id="w-node-_843f8e24-e458-0542-71d3-578b060e34a2-982d6f28"
+                data-w-id="843f8e24-e458-0542-71d3-578b060e34a2" class="card01 is-design"
+                style="background-image: url('images/acroportalLoginPageNoBg.png');">
+                <div class="card-body">
+                  <h1 class="card-title">Acroportal</h1>
+                  <p class="card-sub-title" style="font-weight: 500;">Acroportal is an Attendance Management System facilitating streamlined tracking of student attendance, course management, and grading functionalities. It offers efficient data storage, retrieval, and management through its user-friendly interface and comprehensive features.</p>
+                  <a href="https://acro-portal-front-end.vercel.app/" target="_blank">
+                    <button class="card-button btn-prm--med w-button">Click here</button>
+                  </a>
+                </div>
+              </div>
+
+              <div id="w-node-_843f8e24-e458-0542-71d3-578b060e34a2-982d6f28"
+                data-w-id="843f8e24-e458-0542-71d3-578b060e34a2" class="card01 is-design"
+                style="background-image: url('images/AcademixPage.png');">
+                <div class="card-body">
+                  <h1 class="card-title">Academix</h1>
+                  <p class="card-sub-title" style="font-weight: 500;">Academix, a hackathon-winning project, is a comprehensive Learning Management System (LMS) built with Django, enabling seamless course enrollment, assessment management, and progress tracking for students and administrators.</p>
+                  <a href="https://github.com/TARishabh/Academix" target="_blank">
+                    <button class="card-button btn-prm--med w-button">Click here</button>
+                  </a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+
+
+          <div class="is-pad-b-24 is-mb-4">
+            <h2 class="is-h3" style="margin-top: 4rem; margin-bottom: 4rem;">App Development</h2>
+            <!-- <p class="is-txt-subheadline">Works</p> -->
+          </div>
+
+
+          <div class="is-pad-b-24 is-mb-4">
+            <div class="w-layout-grid grid--4-4-4">
+
+
+              <div class="two-three-card is-design" style="background-image: url('images/pizza_app_menu_page.png');">
+                <div class="card-body">
+                  <h1 class="card-title">SliceExpress</h1>
+                  <p class="card-subtitle" style="font-weight: 500;">SliceExpress aka Pizza Delivery App facilitates efficient order management and tracking for both admin and users, integrating GraphQL and Supabase for real-time updates and secure data storage.</p>
+                  <a href="https://github.com/TARishabh/React-Native-Food-Ordering-App" target="_blank">
+                    <button class="card-button btn-prm--med w-button">Click here</button>
+                </a>
+                </div>
+              </div>
+
+              <div class="two-three-card is-design" style="background-image: url('images/task_app_home_Page.png');">
+                <div class="card-body">
+                  <h1 class="card-title" style="color: white;">TaskTracker</h1>
+                  <p class="card-subtitle" style="color: white; font-weight: 500;">
+                    TaskTracker aka the TODO app is a simple yet powerful task management tool designed to help users organize their daily activities efficiently. With intuitive features like task creation, categorization, and priority setting, it offers a seamless experience for staying on top of tasks and boosting productivity.</p>
+                    <a href="https://github.com/TARishabh/Todo-App" target="_blank">
+                      <button class="card-button btn-prm--med w-button">Click here</button>
+                    </a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+
+
+
+          <div data-w-id="3ed03879-3cea-b282-ac7a-997f6ea52ce4" class="retainer-table" style="">
+            <div class="cc-retainer-card w-embed">
+              <style>
+                /* Project CSS */
+                .item:hover .item_edit-icon {
+                  opacity: 1;
+                }
+
+                .item.editing :is(.item_draggable, .item_edit) {
+                  pointer-events: none;
+                  opacity: 0;
+                }
+
+                .item.editing {
+                  border: solid 1px #4e5e5f;
+                }
+
+                .item.editing:hover {
+                  background-color: #ffff;
+                }
+
+                .item:not(.editing):active {
+                  background-color: #ffff;
+                  transform: rotate(0.5deg);
+                }
+              </style>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
+  </section>
+
+
+  <div>
+    <div>
+
+    </div>
+  </div>
+  <section id="about" class="section-scroll"  style="margin-bottom: 4rem;">
+  
+    <header class="about-section" >
+      <div class="is-pad-tb-96">
+        <div class="container-col-12 is-hero w-container">
+          <div class="w-layout-grid grid--6-6 is-about">
+            <div id="w-node-_1c3abaa2-9f78-8b3d-c94c-21b3569504ca-982d6f28" class="about_content-wrap">
+              <div class="is-margin-b-24" style="margin-bottom: 4rem;">
+                <h2 class="is-h3">Ambitious software engineer who thrives on tackling new problems.</h2>
+              </div>
+              <div class="is-margin-b-48">
+                <p class="is-txt-medium is-txt-small">
+                  Hey there, I'm Rishabh, a passionate full-stack developer with a keen eye for detail.I leverage my technical expertise to bridge the gap between concepts and functional applications.
+
+                  <br><br>When I'm not immersed in the binary symphony, you might find me pursuing adventure on my motorcycle, cruising down the highway or discovering hidden gems off-road. Additionally, I enjoy competing in and winning chess tournaments and hackathons.
+
+                </p>
+              </div>
+              <div class="button-wrap">
+                <div data-w-id="8dc1bb22-7f65-cd45-7b4b-43f0c9d35def" class="btn-wrap">
+                  <div data-w-id="1820ebb6-18d6-0ce6-2f7c-50901ad4f2ca" class="btn-primary-blk"><a href="/about"
+                      class="btn-outer w-inline-block">
+                      <div class="glow-border"
+                        style="opacity: 0; will-change: transform; transform: translate3d(195.12%, 44.444%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <p class="is-txt-subheadline">About</p>
+            </div>
+            <div id="w-node-_68b43fb8-f2d1-7c0f-3abb-7b53609b9f0b-982d6f28" class="content02_img-wrap">
+              <div class="about-img-wrap">
+                <div class="about-img-right is-2"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+  </section>
+
+
+
+  <section id="contact" class="section section-scroll call-to-action is-primary has-text-centered">
+    <div class="container is-narrow">
+
+      <div class="box">
+        <h1 class="title">Start a project</h1>
+        <p>
+          "Curious about collaborating? Let's schedule a chat."
+        </p>
+        <a href="mailto:rishabh.sharma110e@gmail.com"><button class="btn-prm--med ">Contact Me</button></a>
+       
+
+      </div>
+
+      <footer class="footer-section">
+        <h2 class="quote">Enhance, Evolve and Elevate each day.</h2>
+        <div class="footer-icons">
+          <a href="https://github.com/TARishabh" target="_blank" ><i class="fa-brands fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/rishabh-sharma-707308218/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="https://www.instagram.com/__rishhabhh__?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+        <h3 class="footer-text">Made with Efforts!🫡</h3>
+      </footer>
+      
+    </div>
+  </section>
+</main>
+
+
+
+  <script>
+    // JavaScript to add class to navbar on scroll
+    window.addEventListener('scroll', function () {
+      var navbar = document.getElementById('w-node-_9a9dbff4-3152-b2dd-7c55-40245d26fae2-5d26fae2');
+      if (window.scrollY > 0) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    const menuLinks = document.querySelectorAll('.menu_link');
+
+    // Loop through each menu link and add a click event listener
+    menuLinks.forEach((menuLink) => {
+      menuLink.addEventListener('click', (e) => {
+        // Prevent the default action of the link
+        e.preventDefault();
+
+        // Get the href attribute of the link
+        const href = menuLink.getAttribute('href');
+
+        // Use the href attribute to scroll to the corresponding section
+        document.querySelector(href).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+  <script>
+    function openNavbar() {
+        if (window.innerWidth < 992) {
+            let targetDiv = document.querySelector('.dsg-menu-button');
+            if (targetDiv) { // Check if targetDiv is initialized
+                if (!targetDiv.classList.contains('w--open')) {
+                    targetDiv.classList.add('w--open');
+                    targetDiv.setAttribute('aria-expanded', 'true');
+                    let overlay = document.getElementById('w-nav-overlay-0');
+                    overlay.style.display = 'block';
+                    overlay.style.height = '6492.78px';
+                    let nav = document.createElement('nav');
+                    nav.setAttribute('role', 'navigation');
+                    nav.setAttribute('class', 'dsg-nav_menu w-nav-menu');
+                    nav.setAttribute('style', 'transform: translateY(0px) translateX(0px); transition: transform 400ms ease 0s;');
+                    nav.setAttribute('data-nav-menu-open', '');
+                    let innerHTML = `
+                    <div class="menu_wrap" id="injected">
+                        <div class="menu">
+                            <a href="#home" aria-current="page" class="menu_link w-inline-block w--current"
+                                style="pointer-events: auto;">
+                                <p class="menu_link-text">Home</p>
+                            </a>
+                            <link rel="prefetch" href="/">
+                            <a href="#work" class="menu_link w-inline-block" style="pointer-events: auto;">
+                                <p class="menu_link-text">Work</p>
+                                <div class="menu_link-bg" style="opacity: 0;"></div>
+                            </a>
+                            <a href="#about" class="menu_link w-inline-block" style="pointer-events: auto;">
+                                <p class="menu_link-text">About</p>
+                                <div class="menu_link-bg" style="opacity: 0;"></div>
+                            </a>
+                            <div class="menu_shape" style="left: 0px; width: 0px; opacity: 1;">
+                                <div class="menu_shape-bg"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#contact" id='contactinjected' class=" btn-prm--med w-button">Contact</a>
+                    `;
+                    nav.innerHTML = innerHTML;
+                    overlay.appendChild(nav);
+
+                    document.querySelectorAll('#injected a').forEach(link => {
+                      link.addEventListener('click', () => {
+                          // Log "Hello" to the console when any anchor tag is clicked
+                          targetDiv.classList.remove('w--open');
+                          targetDiv.setAttribute('aria-expanded', 'false');
+                          let overlay = document.getElementById('w-nav-overlay-0');
+                          overlay.style.display = 'none';
+                          overlay.innerHTML = '';
+                      });
+                  });
+                  document.getElementById('contactinjected').addEventListener('click', () => {
+                    // Log "Hello" to the console when the Contact anchor tag is clicked
+                    targetDiv.classList.remove('w--open');
+                    targetDiv.setAttribute('aria-expanded', 'false');
+                    let overlay = document.getElementById('w-nav-overlay-0');
+                    overlay.style.display = 'none';
+                    overlay.innerHTML = '';
+                });
+
+                } else {
+                  targetDiv.classList.remove('w--open');
+                  targetDiv.setAttribute('aria-expanded', 'false');
+                  let overlay = document.getElementById('w-nav-overlay-0');
+                  overlay.style.display = 'none';
+                  overlay.innerHTML = '';
+              }
+                // Rest of your code for mobile functionality (optional)
+            } else {
+                // Handle case where targetDiv is not found
+            }
+        }
+    }
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+      // Wait for the document to be fully loaded before accessing DOM elements
+      // Select all anchor tags
+      let test = document.getElementById('injected')
+      document.querySelectorAll('a').forEach(link => {
+          // Add click event listener to each anchor tag
+          link.addEventListener('click', () => {
+              // Log "Hello" to the console
+              console.log("Hello");
+          });
+      });
+  });
+</script>
+
+<script>
+  // Check window width and set font size accordingly
+  function setFontSize() {
+    var subTitle = document.getElementById("sub-title-curiocamp");
+    if (window.innerWidth <= 480) { // Adjust this width as per your phone width
+      subTitle.style.fontSize = "10px";
+    } else {
+      // Reset font size to default
+      subTitle.style.fontSize = "";
+    }
+  }
+
+  // Call setFontSize initially and add event listener for window resize
+  setFontSize();
+  window.addEventListener("resize", setFontSize);
+</script>
+
+
+
+
+
+</body>
+
+</html>
